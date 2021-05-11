@@ -188,3 +188,15 @@ a {
   color: #6496ff;
   margin: 60px;
 }
+
+.upBtn {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  color: #6496ff;
+  cursor: pointer;
+}

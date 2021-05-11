@@ -1,12 +1,13 @@
 'use strict';
 
-// navbar
 const navbar = document.querySelector('#navbar');
 const home = document.querySelector('.home__container');
+const upBtn = document.querySelector('.upBtn');
+const homeContact = document.querySelector('.home__contact');
 
 const navbarHeight = navbar.getBoundingClientRect().height;
 const homeHeight = home.getBoundingClientRect().height;
-
+const homeTop = home.getBoundingClientRect().top;
 document.addEventListener('scroll', () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar__dark');
@@ -16,12 +17,25 @@ document.addEventListener('scroll', () => {
 });
 
 // 클릭시 원하는 section으로 이동
-document.addEventListener('click', (e) => {
+navbar.addEventListener('click', (e) => {
   const linkname = e.target.dataset.name;
   const link = document.querySelector('#' + linkname);
   link.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 
+homeContact.addEventListener('click', (e) => {
+  const linkName = e.target.dataset.name;
+  const link = document.querySelector('#' + linkName);
+  link.scrollIntoView({ behavior: 'smooth' });
+});
+
+// home화면 흐려지기
 document.addEventListener('scroll', () => {
   home.style.opacity = 3 - window.scrollY / homeHeight;
+});
+
+//up버튼
+
+upBtn.addEventListener('click', () => {
+  home.scrollIntoView({ block: 'center' });
 });
