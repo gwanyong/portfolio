@@ -15,6 +15,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
+// 클릭시 원하는 section으로 이동
 document.addEventListener('click', (e) => {
   const linkname = e.target.dataset.name;
   const link = document.querySelector('#' + linkname);
