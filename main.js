@@ -4,6 +4,9 @@ const navbar = document.querySelector('#navbar');
 const home = document.querySelector('.home__container');
 const upBtn = document.querySelector('.upBtn');
 const homeContact = document.querySelector('.home__contact');
+const category = document.querySelector('.work__categories');
+const project = document.querySelector('.project');
+const projects = document.querySelectorAll('.project');
 
 const navbarHeight = navbar.getBoundingClientRect().height;
 const homeHeight = home.getBoundingClientRect().height;
@@ -38,4 +41,18 @@ document.addEventListener('scroll', () => {
 
 upBtn.addEventListener('click', () => {
   home.scrollIntoView({ block: 'center' });
+});
+
+// work( project )
+category.addEventListener('click', (e) => {
+  projects.forEach((project) => {
+    if (
+      e.target.dataset.filter == 'All' ||
+      e.target.dataset.filter == project.dataset.type
+    ) {
+      project.classList.remove('hide');
+    } else {
+      project.classList.add('hide');
+    }
+  });
 });
