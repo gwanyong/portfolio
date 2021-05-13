@@ -7,6 +7,7 @@ const homeContact = document.querySelector('.home__contact');
 const category = document.querySelector('.work__categories');
 const project = document.querySelector('.project');
 const projects = document.querySelectorAll('.project');
+const projectContainer = document.querySelector('.work__projects');
 
 const navbarHeight = navbar.getBoundingClientRect().height;
 const homeHeight = home.getBoundingClientRect().height;
@@ -45,14 +46,19 @@ upBtn.addEventListener('click', () => {
 
 // work( project )
 category.addEventListener('click', (e) => {
-  projects.forEach((project) => {
-    if (
-      e.target.dataset.filter == 'All' ||
-      e.target.dataset.filter == project.dataset.type
-    ) {
-      project.classList.remove('hide');
-    } else {
-      project.classList.add('hide');
-    }
-  });
+  projectContainer.classList.add('animeOn');
+
+  setTimeout(() => {
+    projectContainer.classList.remove('animeOn');
+    projects.forEach((project) => {
+      if (
+        e.target.dataset.filter == 'All' ||
+        e.target.dataset.filter == project.dataset.type
+      ) {
+        project.classList.remove('hide');
+      } else {
+        project.classList.add('hide');
+      }
+    });
+  }, 200);
 });
