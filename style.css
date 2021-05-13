@@ -33,7 +33,6 @@ a {
 
 .navbar__menu {
   display: flex;
-  margin: 20px;
   list-style: none;
 }
 .navbar__menu__item {
@@ -52,6 +51,17 @@ a {
 .navbar__menu__item:hover {
   border: 3px solid white;
   border-radius: 8px;
+}
+
+.menu__toggle {
+  position: absolute;
+  right: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  display: none;
+  cursor: pointer;
 }
 
 /* HOME */
@@ -214,4 +224,31 @@ a {
   font-size: 50px;
   color: #6496ff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu__toggle {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #6496ff;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #6496ff;
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

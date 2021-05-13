@@ -1,6 +1,7 @@
 'use strict';
 
 const navbar = document.querySelector('#navbar');
+const navbarMenu = document.querySelector('.navbar__menu');
 const navbarItems = document.querySelectorAll('.navbar__menu__item');
 const home = document.querySelector('.home__container');
 const upBtn = document.querySelector('.upBtn');
@@ -10,6 +11,7 @@ const project = document.querySelector('.project');
 const projects = document.querySelectorAll('.project');
 const projectContainer = document.querySelector('.work__projects');
 const categoryBtn = document.querySelectorAll('.category__btn');
+const menuToggleBtn = document.querySelector('.menu__toggle');
 
 const navbarHeight = navbar.getBoundingClientRect().height;
 const homeHeight = home.getBoundingClientRect().height;
@@ -40,6 +42,11 @@ homeContact.addEventListener('click', (e) => {
   const linkName = e.target.dataset.name;
   const link = document.querySelector('#' + linkName);
   link.scrollIntoView({ behavior: 'smooth' });
+});
+
+//토글 버튼
+menuToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
 });
 
 // home화면 흐려지기
