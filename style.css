@@ -43,13 +43,14 @@ a {
   padding: 8px 12px;
 }
 
-/* .navbar__menu__item.active{
-    border: 1px solid white;
-    border-radius: 3px;
-} */
+.navbar__menu__item.active {
+  border: 3px solid white;
+  border-radius: 8px;
+  transform: scaleY(1.1);
+}
 
 .navbar__menu__item:hover {
-  border: 1px solid white;
+  border: 3px solid white;
   border-radius: 8px;
 }
 
